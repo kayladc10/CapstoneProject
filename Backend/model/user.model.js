@@ -4,8 +4,14 @@ mongoose.pluralize(null);
 
 let userSchema = mongoose.Schema({
     email:{type:String,require:true, unique:true},
-    username:{type:String,require:true, unique:true},
+    fname:{type:String,require:true},
+    mname:{type:String},
+    lname:{type:String,require:true},
+    birth:{type:Date,require:true},
+    phone:{type:Number,min: [10, 'Please enter the full phone number including area code!']},
     password:{type:String,require:true, select:false}
 })
 
-module.exports = userSchema
+let userModel = mongoose.model("User",userSchema);
+
+module.exports = userModel

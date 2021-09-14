@@ -3,9 +3,7 @@ let userModel = require("../model/user.model");
 
 let signUp = async (request,response)=>{
     let user = request.body;
-    let userIndex = await userModel.findOne({
-        $OR:[{email:user.email,username:user.username}]
-    });
+    let userIndex = await userModel.findOne({email:user.email});
     if(userIndex!=null){
         response.send("Email and username must be unique!");
     }
@@ -15,12 +13,7 @@ let signUp = async (request,response)=>{
 }
 let signIn = async (request,response)=>{
     let user = request.body;
-    let userIndex = await userModel.findOne({
-        $AND:[
-            {$OR:[{email:user.email,username:user.username}]},
-            {password:user.password}
-        ]
-    });
+    let userIndex = await userModel.findOne({email:user.email,password:user.password});
     if(userIndex!=null){
         response.redirect("../user/loggedin")
     }
