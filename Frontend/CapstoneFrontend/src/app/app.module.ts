@@ -7,6 +7,11 @@ import { MainComponent } from './main/main.component';
 import { UserComponent } from './user/user.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { RaiseticketComponent } from './raiseticket/raiseticket.component';
+import { SelectitemsComponent } from './selectitems/selectitems.component';
+import { DeleteitemsComponent } from './deleteitems/deleteitems.component';
+import { ViewitemsComponent } from './viewitems/viewitems.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +19,12 @@ import { SignupComponent } from './signup/signup.component';
     MainComponent,
     UserComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    RaiseticketComponent,
+    SelectitemsComponent,
+    DeleteitemsComponent,
+    ViewitemsComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
