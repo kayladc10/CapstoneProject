@@ -2,7 +2,7 @@
 let userModel = require("../model/user.model");
 
 let signUp = async (request,response)=>{
-    let user = requset.body;
+    let user = request.body;
     let userIndex = await userModel.findOne({
         $OR:[{email:user.email,username:user.username}]
     });
@@ -14,7 +14,7 @@ let signUp = async (request,response)=>{
     }
 }
 let signIn = async (request,response)=>{
-    let user = requset.body;
+    let user = request.body;
     let userIndex = await userModel.findOne({
         $AND:[
             {$OR:[{email:user.email,username:user.username}]},
